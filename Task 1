@@ -1,0 +1,16 @@
+byte pin[10]={0b1111110,0b0110000,0b1101101,0b1111001,0b0110011,0b1011011,0b1011111,0b1110000,0b1111111,0b1110011};
+byte pin1[7]={2,3,4,5,6,7,8};
+void setup(){
+ Serial.begin(9600);
+ for(int i=2;i<=8;i++){
+ pinMode(i,OUTPUT);
+ }
+}
+void loop(){
+  
+for(byte z=0;z<10;z++){
+  for(byte i=0;i<=6;i++){
+digitalWrite(pin1[i],pin[z]&64>>i);
+    }
+    delay(1000);}
+}
